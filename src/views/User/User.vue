@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h3>Cart</h3>
+        <h3>User</h3>
     </div>
 </template>
