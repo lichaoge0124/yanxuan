@@ -9,7 +9,7 @@
             </van-nav-bar>
         </header>
         <!-- logo -->
-        <img src="../../assets/logo.png" width="100" margin="0 auto" class="logo" alt="">
+        <img src="../../assets/logo.png" width="100" class="logo" alt="">
         <!-- 登录 -->
         <van-form @submit="onSubmit">
             <van-cell-group inset>
@@ -87,6 +87,9 @@ onMounted(() => {
 
 </script>
 <style >
+.logo{
+    margin: 5px 35%;
+}
 .register{
     float: left;
     font-size: .37333rem;
