@@ -5,7 +5,9 @@
 </template>
  
 <script setup>
-import { onMounted, watch } from 'vue';
+import { onMounted, watch, defineEmits } from 'vue';
+
+const emit = defineEmits(['identifyTxt'])
 
 const props = defineProps({
     identifyCode: {
@@ -128,6 +130,8 @@ const drawPic = () => {
 
 watch(() => props.identifyCode, (newValue, oldValue) => {
     drawPic()
+    // console.log(identifyTxt());
+    emit('identifyTxt',newValue)
 })
 
 onMounted(() => {
