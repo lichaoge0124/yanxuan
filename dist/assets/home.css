@@ -1,0 +1,74 @@
+.home_box {
+    position: relative;
+}
+
+.header_box {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 3.0625rem;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    background-color: #1BAEAE;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left_box {
+    width: 3.0412rem;
+    height: 3.0412rem;
+    color: #fff;
+
+}
+
+.middle_box {
+    height: 3.0412rem;
+    width: 17.6094rem;
+}
+
+.header_search {
+    height: 1.7913rem;
+    width: 17.9713rem;
+    border-radius: 1.5625rem;
+    background-color: #BBE7E7;
+    box-sizing: border-box;
+    margin-top: .625rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.app-name {
+    width: 6.25rem;
+    height: 1.7913rem;
+    color: #1BAEAE;
+    text-align: center;
+    line-height: 1.7913rem;
+    font-size: 1.25rem;
+    padding: 0 .625rem;
+    box-sizing: border-box;
+}
+
+.shuxian {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-left: 1px solid #000;
+    padding: 0 .625rem;
+}
+
+.search-title {
+    color: #6666;
+    font-size: .875rem;
+    display: inline-block;
+    line-height: 1.7913rem;
+
+}
+
+.right_box {
+    height: 3.0412rem;
+    width: 1.25rem;
+    margin: 0 14px 0 0;
+    color: #fff;
+}

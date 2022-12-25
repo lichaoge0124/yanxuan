@@ -11,13 +11,12 @@ import vant from "vant"
 import "vant/lib/index.css"
 
 
-import { Toast } from 'vant';
+;
 
 
 
 
 let app = createApp(App)
-app.use(Toast);
 app.use(router)
 app.use(vant)
 app.mount('#app')

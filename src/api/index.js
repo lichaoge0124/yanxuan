@@ -9,9 +9,14 @@ export function register(name, pwd) {
         password:pwd
     })
 }
+//登陆接口
 export function login(name, pwd) {
     return http.post("user/login", {
         loginName: name,
         passwordMd5: md5(pwd)
     })
+}
+//获取商品页面
+export function getIndexInfo() {
+    return http.get("index-infos")
 }
