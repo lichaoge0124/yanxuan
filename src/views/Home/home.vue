@@ -26,11 +26,78 @@
             </van-swipe-item>
         </van-swipe>
        </div>
-     </div>
+       <!-- 宫格 -->
+       <div class="van-grid">
+            <van-grid :column-num="5">
+                <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-gouwucheman"></div>
+                    <span class="text">码路超市</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-fushi"></div>
+                    <span class="text">码路服饰</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-quanqiugou"></div>
+                    <span class="text">全球购</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-shengxianshuiguo"></div>
+                    <span class="text">码路生鲜</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-zhisongdaojia"></div>
+                    <span class="text">码路到家</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-jiaofei"></div>
+                    <span class="text">充值缴费</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-pintuangou"></div>
+                    <span class="text">9.9元拼</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-youhuijuan-xianxing"></div>
+                    <span class="text">领劵</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-shengqian"></div>
+                    <span class="text">省钱</span>
+                </van-grid-item>
+                 <van-grid-item class="grid_item">
+                   <div class="icon iconfont icon-quanbu"></div>
+                    <span class="text">全部</span>
+                </van-grid-item>
+            </van-grid> 
+       </div>
+       <!-- 新品上线 -->
+       <div class="good">
+          <div class="good_header">
+            <h3>新品上线</h3>
+          </div>
+          <card :Goodses="newGoodses"></card>
+       </div>
+       <!-- 热销商品 -->
+        <div class="good">
+          <div class="good_header">
+            <h3>热销商品</h3>
+          </div>
+          <card :Goodses="hotGoodses"></card>
+       </div>
+       <!-- 热销商品 -->
+        <div class="good">
+          <div class="good_header">
+            <h3>热销商品</h3>
+          </div>
+          <card :Goodses="recommendGoodses"></card>
+          </div>
+        </div>
 </template>
 <script setup>
 import { getIndexInfo } from "../../api/index"
 import { ref, reactive, toRefs, onMounted } from "vue"
+import card from "../../components/card.vue"
 
 let IndexInfo = reactive({
     carousels: [],
@@ -38,7 +105,7 @@ let IndexInfo = reactive({
     newGoodses: [],
     recommendGoodses: [],
 })
-let { carousels, hotGoodses, newGoodses, recommendGoodses, image } = toRefs(IndexInfo)
+let { carousels, hotGoodses, newGoodses, recommendGoodses } = toRefs(IndexInfo)
 
 onMounted(() => {
     getIndexInfo().then(data => {
@@ -57,7 +124,7 @@ onMounted(() => {
 </script>
 <style>
 .home_box {
-    position: relative;
+    padding-bottom: 2.66667rem;
 }
 
 .header_box {
@@ -125,9 +192,42 @@ onMounted(() => {
     flex: none;
 }
 
-/* 轮播图 */
+/* 轮播图===========================================> */
 .swipe-img {
     width: 100%;
     height: auto;
+}
+
+/* 宫格====================================> */
+.van-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home_box .van-grid-item {
+    height: 2.05333rem;
+}
+
+.home_box .van-grid-item .text {
+    font-size: .32rem;
+    text-align: center;
+}
+
+.home_box .van-grid-item .icon {
+    color: #1baeae;
+    font-size: 1.06667rem;
+    text-align: center;
+    margin-bottom: 0.18667rem;
+}
+
+/* good====================================> */
+.good_header {
+    background: #f9f9f9;
+    height: 1.33333rem;
+    line-height: 1.33333rem;
+    text-align: center;
+    color: #1baeae;
+    font-size: .42667rem;
+    font-weight: 500;
 }
 </style>

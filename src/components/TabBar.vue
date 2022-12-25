@@ -1,6 +1,6 @@
 <template>
     <van-tabbar route>
-      <van-tabbar-item replace to="/home" >
+      <van-tabbar-item replace to="/home" class="item_box">
         <span>首页</span>
         <template #icon="props">
         <span class="iconfont icon-shouye"></span>
@@ -26,3 +26,13 @@
       </van-tabbar-item>
     </van-tabbar>
 </template>
+<style>
+.item_box {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+</style>
